@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "EBSI Legal Entity Verifiable ID",
+  "description": "Schema of an EBSI Verifiable ID for a legal entity",
+  "type": "object",
+  "allOf": [
+    {
+      "$ref": "https://ec.europa.eu/digital-building-blocks/code/projects/EBSI/repos/json-schema/raw/schemas/ebsi-attestation/2022-11_01/schema.json"
+    },
+    {
+      "properties": {
+        "credentialSubject": {
+          "description": "Defines information about the subject that is described by the Verifiable ID",
+          "type": "object",
+          "properties": {
+            "id": {
+              "description": "Defines the DID of the subject that is described by the Verifiable Attestation",
+              "type": "string",
+              "format": "uri"
+            },
+            "name": {
+              "description": "The name of entity",
+              "type": "string"
+            }
+          },
+          "required": ["id", "name"]
+        }
+      }
+    }
+  ]
+}
+
